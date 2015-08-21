@@ -2,23 +2,20 @@ class Game
   attr_accessor :player, :dealer, :deck
 
   def initialize
-    @player = Player.new(self.player.name)
+    welcome_message
+    @player = Player.new
     @dealer = Dealer.new('DomoDealer')
     @deck = Deck.new
   end
 
   def play
-    welcome_message
+
   end
 
   def welcome_message
     puts "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
     puts "Welcome to Camden's Blackjack table!"
     puts "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
-    puts "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
-    puts "Welcome, #{self.player.name} and goodluck!"
-    puts " "
-
   end
 
 end
@@ -58,13 +55,12 @@ end
 class Player
   attr_accessor :name
 
-  def initialize(name)
+  def initialize
     @name = set_player_name(name)
   end
 
   def set_player_name(name)
     puts "What is your name?"
-    puts " "
     @name = gets.chomp
     puts " "
   end
@@ -74,7 +70,7 @@ end
 class Dealer
   attr_reader :name
 
-  def initialize
+  def initialize(name)
     @name = name
   end
 
