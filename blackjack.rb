@@ -53,7 +53,6 @@ class BlackJack
         puts "#{player.name} got BlackJack!"
       end
       show_final_score
-      # play_again?
     elsif player_or_dealer.is_busted?
       if player_or_dealer.is_a?(Dealer)
         puts "Dealer BUSTED! You win!"
@@ -61,7 +60,6 @@ class BlackJack
         puts "You BUSTED! You lose!"
       end
       show_final_score
-      # play_again?
     end
   end
 
@@ -122,7 +120,6 @@ class BlackJack
     else
       puts "Sorry #{player.name}, but you Lost..."
     end
-    # play_again?
   end
 
   def show_final_score
@@ -134,10 +131,6 @@ class BlackJack
     puts " "
     exit
   end
-
-  # def play_again?
-  #
-  # end
 
 end
 
